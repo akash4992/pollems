@@ -1,0 +1,35 @@
+{% load static %}
+{% load poll_extras %}
+
+<nav class="navbar navbar-inverse newone">
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+        <a class="navbar-brand" href="#">
+    <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" height="15" width="15" class=""
+      alt="mdb logo"> EMS
+  </a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/polls/">Home</a></li>
+      <li><a href="{% url 'employee_list'%}">{{"employee"|capfirst}}</a></li>
+      <li><a href="{% url 'polls_list' %}">{{"Polls"|upper:3}}
+      <span class="badge badge-primary badge-pill">{{poll_count}}</span>
+      </a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+
+     <form class="form-inline my-2 my-lg-0" method="POST" action="/logout/">
+        {% csrf_token %}
+       <a href="{%  url 'my_profile'  %}"><span>{{request.user.first_name}}</span></a>
+
+        <input type="submit" class="btn btn-outline-danger my-2 my-sm-0" value="Logout">
+    </form>
+      </li>
+
+    </ul>
+
+    </div>
+  </div>
+</nav>

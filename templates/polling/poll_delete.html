@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends 'polling/base.html' %}
+{%block content%}
+<p>Are you so you want to this</p>
+<form method="POST" action="">
+    {%csrf_token%}
+
+    <button style="background-color: green ;
+  color: white;" type="submit">Yes</button>
+ </form>
+
+
+{% endblock %}

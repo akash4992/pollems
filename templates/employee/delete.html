@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'polling/base.html' %}
+
+
+{%block content%}
+<h2>Delete Page</h2>
+
+{{users.first_name}}<br>
+
+{{users.last_name}}<br>
+
+
+
+<p>Are you so you want to this</p>
+<form method="POST" action="/emp/{{user.id}}/delete/">
+    {%csrf_token%}
+
+    <button style="background-color: green ;
+  color: white;" type="submit">Yes</button>
+ </form>
+<a href="/emp/{{user.id}}/edit">Edit</a>
+<a href="/emp/{{user.id}}/delete">Delete</a>
+
+
+{% endblock %}

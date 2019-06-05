@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'polling/base.html' %}
+
+
+{%block content%}
+<h2>Edit page</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <table class="table table-bordered table-light">
+            {{user_form.as_table}}
+        </table>
+        <br>
+        <button type="submit" class="btn btn-warning float-right">Update Employee</button>
+    </form>
+
+<!--<a href="/emp/{{user.id}}/edit">Edit</a>-->
+<!--<a href="/emp/{{user.id}}/delete">Delete</a>-->
+
+
+{% endblock %}
